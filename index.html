@@ -16,88 +16,67 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <style></style>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <div class="container">
-      <button class="panel-toggle" onclick="togglePanel()">⚙️ Customize</button>
+ <body>
+  <!-- Kebab menu button -->
+  <button class="kebab-menu" onclick="toggleSidePanel()">
+    <span class="material-icons">more_vert</span>
+  </button>
 
-      <div class="customization-panel" id="customPanel">
-        <div class="panel-header">
-          <h3>Customize Styles</h3>
-          <button class="panel-close" onclick="togglePanel()">&times;</button>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Primary Color</label>
-          <div>
-            <span
-              class="color-option"
-              style="background-color: #4361ee"
-              onclick="changeColor('primary', '#4361ee')"
-            ></span>
-            <span
-              class="color-option"
-              style="background-color: #e63946"
-              onclick="changeColor('primary', '#e63946')"
-            ></span>
-            <span
-              class="color-option"
-              style="background-color: #2a9d8f"
-              onclick="changeColor('primary', '#2a9d8f')"
-            ></span>
-            <span
-              class="color-option"
-              style="background-color: #f4a261"
-              onclick="changeColor('primary', '#f4a261')"
-            ></span>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Theme</label>
-          <select
-            class="form-select"
-            id="themeSelect"
-            onchange="changeTheme(this.value)"
-          >
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-            <option value="blue">Blue</option>
-            <option value="green">Green</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Font Size</label>
-          <input
-            type="range"
-            min="12"
-            max="20"
-            value="16"
-            class="slider"
-            id="fontSize"
-            oninput="changeFontSize(this.value)"
-          />
-          <div class="slider-value" id="fontSizeValue">16px</div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Border Radius</label>
-          <input
-            type="range"
-            min="0"
-            max="20"
-            value="5"
-            class="slider"
-            id="borderRadius"
-            oninput="changeBorderRadius(this.value)"
-          />
-          <div class="slider-value" id="borderRadiusValue">5px</div>
-        </div>
-        <button class="btn" onclick="resetStyles()">Reset to Default</button>
-      </div>
-      <div class="panel-pull-tab" id="panelPullTab" onclick="togglePanel()">
-        <i class="material-icons">palette</i>
-      </div>
+  <!-- Side panel -->
+  <div class="side-panel" id="sidePanel">
+    <div class="panel-header">
+      <h3>Customize Styles</h3>
+      <button class="panel-close" onclick="toggleSidePanel()">&times;</button>
+    </div>
 
+    <div class="form-group">
+      <label class="form-label">Primary Color</label>
+      <div>
+        <span class="color-option" style="background-color:#4361ee"
+              onclick="changeColor(event,'primary','#4361ee')"></span>
+        <span class="color-option" style="background-color:#e63946"
+              onclick="changeColor(event,'primary','#e63946')"></span>
+        <span class="color-option" style="background-color:#2a9d8f"
+              onclick="changeColor(event,'primary','#2a9d8f')"></span>
+        <span class="color-option" style="background-color:#f4a261"
+              onclick="changeColor(event,'primary','#f4a261')"></span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Theme</label>
+      <select class="form-select" id="themeSelect" onchange="changeTheme(this.value)">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Font Size</label>
+      <input type="range" min="12" max="20" value="16" class="slider"
+             id="fontSize" oninput="changeFontSize(this.value)" />
+      <div class="slider-value" id="fontSizeValue">16px</div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Border Radius</label>
+      <input type="range" min="0" max="20" value="5" class="slider"
+             id="borderRadius" oninput="changeBorderRadius(this.value)" />
+      <div class="slider-value" id="borderRadiusValue">5px</div>
+    </div>
+
+    <button class="btn" onclick="resetStyles()">Reset to Default</button>
+  </div>
+
+  <!-- Toast container -->
+  <div id="toastContainer"></div>
+
+  <script src="jvsr.js"></script>
+</body>
       <header>
         <h1>WAD621S Interactive Web Application Styling Lab</h1>
         <p>
