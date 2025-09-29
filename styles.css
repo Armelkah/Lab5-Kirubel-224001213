@@ -40,9 +40,7 @@
 .toast.show { opacity:1; transform:translateY(0); }
 .toast-close { margin-left:10px; cursor:pointer; }
 
-/* =========================
-   Side Panel — base styling
-   ========================= */
+/* Side Panel  */
 :root {
   /* panel vars default to card vars unless themed below */
   --panel-bg: var(--card-bg, #fff);
@@ -146,10 +144,7 @@
   border-color: color-mix(in srgb, var(--primary) 35%, var(--border-color));
 }
 
-/* =========================
-   THEME OVERRIDES for panel
-   (hook into your existing body classes)
-   ========================= */
+/* THEME OVERRIDES for panel */
 
 /* DARK */
 body.dark-theme {
@@ -197,9 +192,7 @@ header p {
   opacity: .85;
 }
 
-/* =======================
-   Cards (reduced images)
-   ======================= */
+/* Cards (reduced images) */
 .component-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -221,11 +214,11 @@ header p {
   border-color: color-mix(in srgb, var(--primary, #4361ee) 22%, var(--border-color, #e9ecef));
 }
 
-/* ↓↓ key change: smaller images */
+/* key change: smaller images */
 .card-img {
   display: block;
   width: 100%;
-  height: 140px;             /* reduced height */
+  height: 140px;             
   object-fit: cover;
   filter: saturate(1.02) contrast(1.02);
 }
@@ -244,9 +237,7 @@ header p {
   .card-img { height: 150px; }
 }
 
-/* ==============
-   Buttons glow
-   ============== */
+/*Buttons glow*/
 .btn {
   border-radius: calc(var(--border-radius, 10px) - 4px);
   box-shadow: 0 1px 0 rgba(0,0,0,.05);
@@ -263,9 +254,7 @@ header p {
   color: #fff;
 }
 
-/* ===================
-   Widgets (tidier)
-   =================== */
+/* Widgets (tidier)*/
 .interactive-widgets {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -302,9 +291,7 @@ header p {
 #clock { font-size: 1.4rem; font-weight: 600; letter-spacing: .5px; }
 #date  { font-size: .9rem; opacity: .8; }
 
-/* ===============
-   Tabs styling
-   =============== */
+/* Tabs styling */
 .tabs {
   margin-top: 20px;
   background: var(--card-bg, #fff);
@@ -337,9 +324,7 @@ header p {
 }
 .tab-content { padding: 16px; }
 
-/* ==========================
-   Lists, Chips, Badges
-   ========================== */
+/* Lists, Chips, Badges */
 .list {
   list-style: none;
   margin: 0;
@@ -387,9 +372,7 @@ header p {
 }
 .chip .close { margin-left: 4px; }
 
-/* ===================
-   Dropdown polish
-   =================== */
+/* Dropdown polish*/
 .dropdown { position: relative; display: inline-block; }
 .dropdown-toggle {
   padding: 8px 12px;
@@ -424,9 +407,7 @@ header p {
   color: var(--primary, #4361ee);
 }
 
-/* ===================
-   Accessibility nits
-   =================== */
+/* Accessibility nits*/
 .nav-item:focus-visible,
 .dropdown-toggle:focus-visible,
 .btn:focus-visible,
@@ -436,9 +417,7 @@ header p {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary, #4361ee) 30%, transparent);
 }
 
-/* =========================================
-   THEME: DARK  (high contrast, low glare)
-   ========================================= */
+/* THEME: DARK */
 body.dark-theme {
   /* Brand */
   --primary:        #7b68ee;    /* soft purple */
